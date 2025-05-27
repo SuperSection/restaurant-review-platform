@@ -1,6 +1,6 @@
 # Restaurant Review Platform
 
-A web-based platform that enables users to discover local restaurants, read authentic review from other diners, and share their own dining experiences through detailed reviews and rating, helping others make infromed decision about where to eat.
+A web-based platform that enables users to discover local restaurants, read authentic review from other diners, and share their own dining experiences through detailed reviews and rating, helping others make informed decision about where to eat.
 
 ## Definitions
 
