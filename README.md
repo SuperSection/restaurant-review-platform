@@ -213,6 +213,59 @@ Keycloak supports different protocols like SSO, OAuth2, OpenID Connect, LDAP, an
 
 ---
 
+## Mapstruct Setup
+
+- `<properties>` to be compatible with each other (in `pom.xml` file):
+
+    ```xml
+    <lombok.version>1.18.36</lombok.version>
+    <org.mapstruct.version>1.6.3</org.mapstruct.version>
+    ```
+
+- Add Mapstruct dependency
+
+    ```xml
+    <dependency>
+        <groupId>org.mapstruct</groupId>
+        <artifactId>mapstruct</artifactId>
+        <version>1.6.3</version>
+    </dependency>
+    ```
+
+- Configure Maven Compiler Plugin for annotation processing
+- Setup Lombok-Mapstruct binding for compatibility
+
+    ```xml
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <configuration>
+        <annotationProcessorPaths>
+          <!-- Lombok must come first -->
+          <path>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+          </path>
+          <!-- Mapstruct processor -->
+          <path>
+            <groupId>org.mapstruct</groupId>
+            <artifactId>mapstruct-processor</artifactId>
+            <version>${org.mapstruct.version}</version>
+          </path>
+          <!-- Mapstruct binding -->
+          <path>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok-mapstruct-binding</artifactId>
+            <version>0.2.0</version>
+          </path>
+        </annotationProcessorPaths>
+      </configuration>
+    </plugin>
+    ```
+
+---
+
 ### Author
 
 - [Soumo Sarkar](https://linkedin.com/in/soumo-sarkar)
