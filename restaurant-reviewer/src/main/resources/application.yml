@@ -1,3 +1,7 @@
 spring:
   application:
     name: restaurant-reviewer
+
+  elasticsearch:
+    uris:
+    - http://localhost:9200
