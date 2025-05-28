@@ -163,9 +163,7 @@ A new Spring Boot Project is created using [spring-initialzr](https://start.spri
 - Application configured to connect Elasticsearch
 - Data persists through container restarts using Docker volumes
 
----
-
-## Elasticsearch & Kibana
+### **Elasticsearch & Kibana**
 
 - An **index** is a collection of documents uniquely identified by a name or an alias.
 - Each document is a collection of fields, which each have their own data type.
@@ -184,10 +182,10 @@ Keycloak supports different protocols like SSO, OAuth2, OpenID Connect, LDAP, an
 
 > **Single Sign-On** (SSO): Enables users to log in once and access multiple applications and services without needing to re-enter credentials.
 
-### Keycloak Setup
+### **Keycloak Setup**
 
 - Add [Keycloak](https://quay.io/repository/keycloak/keycloak) service configuration to Docker Compose.
-- Expose Keycloak's administration console on [port 9090](http://localhost:9090)
+- Expose Keycloak's Administration Console on [port 9090](http://localhost:9090)
 - Sign In (using admin user & password)
 - `Manage realms > Create realm`
 - Realm name: `restaurant-review`, then Create
@@ -213,7 +211,7 @@ Keycloak supports different protocols like SSO, OAuth2, OpenID Connect, LDAP, an
 
 ---
 
-## Mapstruct Setup
+### **Mapstruct Setup**
 
 - `<properties>` to be compatible with each other (in `pom.xml` file):
 
@@ -263,6 +261,12 @@ Keycloak supports different protocols like SSO, OAuth2, OpenID Connect, LDAP, an
       </configuration>
     </plugin>
     ```
+
+### **Frontend Setup**
+
+- Download / clone the frontend from source code
+- Install the dependencies with `npm install`
+- Run the frontend project with `npm run dev`
 
 ---
 
