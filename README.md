@@ -176,6 +176,43 @@ A new Spring Boot Project is created using [spring-initialzr](https://start.spri
 
 ---
 
+## Keycloak
+
+Keycloak is an open-source Identity and Access Management (IAM) tool, developed by Red Hat, provides a centralized solution for user authentication and authorization across multiple applications.
+
+Keycloak supports different protocols like SSO, OAuth2, OpenID Connect, LDAP, and more.
+
+> **Single Sign-On** (SSO): Enables users to log in once and access multiple applications and services without needing to re-enter credentials.
+
+### Keycloak Setup
+
+- Add [Keycloak](https://quay.io/repository/keycloak/keycloak) service configuration to Docker Compose.
+- Expose Keycloak's administration console on [port 9090](http://localhost:9090)
+- Sign In (using admin user & password)
+- `Manage realms > Create realm`
+- Realm name: `restaurant-review`, then Create
+- Configure Spring Boot to use Keycloak for JWT validation (in `application.properties`)
+
+    ```properties
+    spring.security.oauth2.resourceserver.jwt.issuer-uri=http://localhost:9090/realms/restaurant-review
+    ```
+
+  This configuration is used to secure REST APIs using OAuth2 and JWT (JSON Web Tokens), with Keycloak acting as the Identity Provider (IdP).
+
+  1. **Resource Server**: This Spring Boot app is acting as a resource server, meaning it serves protected APIs that require a valid access token.
+
+  2. **JWT Support**: It expects JWT tokens (access tokens) in the Authorization header (`Bearer <token>`).
+
+  3. **Issuer URI**: Spring queries the following well-known endpoint (automatically):
+
+      ```bash
+      http://localhost:9090/realms/restaurant-review/.well-known/openid-configuration
+      ```
+
+      to get all metadata (like public keys, token validation rules, etc.) from the Keycloak server.
+
+---
+
 ### Author
 
 - [Soumo Sarkar](https://linkedin.com/in/soumo-sarkar)
