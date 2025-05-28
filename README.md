@@ -127,15 +127,14 @@ Entities we need:
 
 ---
 
-## Spring Boot Module Structure
+## Spring Boot Project Setup Steps
 
-1. Create a new Spring Boot project
-2. Understanding the initial project structure
-3. Setting up Elasticsearch with Docker
-4. Installing and configuring Kibana
-5. Setting up Keycloak with Docker
-6. Configure Mapstruct with Lombok
-7. Running the frontend application
+1. [Create a new Spring Boot project](#project-structure)
+2. [Setting up Elasticsearch with Docker](#docker-compose-setup)
+3. [Installing and configuring Kibana](#elasticsearch--kibana)
+4. [Setting up Keycloak with Docker](#keycloak)
+5. [Configure Mapstruct with Lombok](#mapstruct-setup)
+6. [Running the frontend application](#frontend-setup)
 
 ---
 
@@ -267,6 +266,17 @@ Keycloak supports different protocols like SSO, OAuth2, OpenID Connect, LDAP, an
 - Download / clone the frontend from source code
 - Install the dependencies with `npm install`
 - Run the frontend project with `npm run dev`
+
+---
+
+## Create all the required Entities
+
+1. Create the user entity
+2. Create the address address
+3. Create the operating hours entity
+4. Create the photo entity
+5. Create the review entity
+6. Create the restaurant entity
 
 ---
 
