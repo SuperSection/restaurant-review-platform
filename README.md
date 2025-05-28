@@ -156,6 +156,26 @@ A new Spring Boot Project is created using [spring-initialzr](https://start.spri
 - Main application class serves as the entry point
 - Resource files are stored in `src/main/resources`
 
+## Docker Compose Setup
+
+- Docker Compose configured to run Elasticsearch and Kibana locally
+- Elasticsearch runs on [port 9200](http://localhost:9200), Kibana on [port 5601](http://localhost:5601)
+- Application configured to connect Elasticsearch
+- Data persists through container restarts using Docker volumes
+
+---
+
+## Elasticsearch & Kibana
+
+- An **index** is a collection of documents uniquely identified by a name or an alias.
+- Each document is a collection of fields, which each have their own data type.
+- Kibana's **Index Management** features are an easy, convenient way to manage your cluster’s indices, data streams, index templates, and enrich policies.
+
+  - <http://localhost:5601/app/home#/> > Management > Stack Management > Index Management
+  - Explore available index actions & management features.
+
+---
+
 ### Author
 
 - [Soumo Sarkar](https://linkedin.com/in/soumo-sarkar)
