@@ -288,8 +288,10 @@ Keycloak supports different protocols like SSO, OAuth2, OpenID Connect, LDAP, an
 - Configured `LocalDateTime` with proper date format.
 - Added timestamp fields with proper `DateFormat` config for `Review` entity.
 - Used `FieldType.Integer` for the `rating` field.
+- Created `Restaurant` entity with `@Document` configuration for Elasticsearch.
+- Integrated `@GeoPointField` for storing restaurant location data.
 
-> Initialized the `photos` list for safe handling
+> Initialized the `photos` & `reviews` list for safe handling
 
 ---
 
