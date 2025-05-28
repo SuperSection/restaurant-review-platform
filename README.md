@@ -278,6 +278,14 @@ Keycloak supports different protocols like SSO, OAuth2, OpenID Connect, LDAP, an
 5. Create the review entity
 6. Create the restaurant entity
 
+### **Use of Elasticsearch annotations in Entities**
+
+- Configure `@Field` annotations for Elasticsearch
+- Used `FieldType.Keyword` for exact matching of IDs (or exact-match fields like `postalCode`)
+- Used `FieldType.Text` for searchable name fields (or searchable fields like `streetName`)
+- Built the `OperatingHours` entity containing nested `TimeRange` objects.
+- Used `FieldType.Nested` to maintain relationships between fields.
+
 ---
 
 ### Author
