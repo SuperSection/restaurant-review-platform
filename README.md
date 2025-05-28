@@ -73,3 +73,60 @@ Acceptance Criteria
 4. The platform calculates and displays average ratings for each aspect.
 
 ---
+
+## Domain Overview
+
+Entities we need:
+
+- User
+- Restaurant
+- Review
+- Photo
+- Address
+  - Geolocation
+- OperatingHours
+
+### ER Diagram
+
+![Domain Overview Diagram](./diagram/domains.png)
+
+- The `User` can create restaurants and write.
+- Each `Restaurant` has core details, rating, photos, and nested structures.
+- A `Review` includes content, 1-5 star rating, and photos within 48hr edit window.
+- Supporting objects like `Address` and `OperatingHours` help organize data.
+
+### REST API Overview
+
+- The REST API allows for managing Restaurants, Reviews, and Photos.
+
+---
+
+## UI Overview
+
+- Homepage displays resturant cards with images, ratings, and cuisine types
+- Restaurant details page shows location map, reviews, and submission form.
+- Search functionality supports seach and filtering by rating.
+- Users can submit reviews with ratings, text, and photos.
+- Restaurant owners can add new establishments via a dedicated form.
+
+## Project Architecture Overview
+
+![Project Architecture](./diagram/project-architecture.png)
+
+- Frontend uses Next.js to handle UI and client-side interactions.
+- Backend uses **Spring Boot** for business logic and API endpoints.
+- **Elasticsearch** stores data and enables advanced search features.
+- **Keycloak** manages authentication using OAuth2 and OpenID Connect.
+
+### Project In Brief
+
+- Platform enables restaurant discovery and reviews
+- Implements core features: search, auth, and image handling
+- Focuses on advanced search functionality
+- Includes geospatial capailities
+
+---
+
+### Author
+
+- [Soumo Sarkar](https://linkedin.com/in/soumo-sarkar)
