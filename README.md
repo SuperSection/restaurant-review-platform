@@ -281,10 +281,11 @@ Keycloak supports different protocols like SSO, OAuth2, OpenID Connect, LDAP, an
 ### **Use of Elasticsearch annotations in Entities**
 
 - Configure `@Field` annotations for Elasticsearch
-- Used `FieldType.Keyword` for exact matching of IDs (or exact-match fields like `postalCode`)
+- Used `FieldType.Keyword` for exact matching of IDs (or exact-match fields like `postalCode`, `url`)
 - Used `FieldType.Text` for searchable name fields (or searchable fields like `streetName`)
 - Built the `OperatingHours` entity containing nested `TimeRange` objects.
 - Used `FieldType.Nested` to maintain relationships between fields.
+- Configured `LocalDateTime` with proper date format.
 
 ---
 
