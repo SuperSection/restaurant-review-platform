@@ -76,7 +76,7 @@ Acceptance Criteria
 
 ## Domain Overview
 
-Entities we need:
+[Entities](#create-all-the-required-entities) we need:
 
 - User
 - Restaurant
@@ -113,15 +113,15 @@ Entities we need:
 
 ![Project Architecture](./diagram/project-architecture.png)
 
-- Frontend uses Next.js to handle UI and client-side interactions.
-- Backend uses **Spring Boot** for business logic and API endpoints.
+- [Frontend](#frontend-setup) uses Next.js to handle UI and client-side interactions.
+- [Backend](#spring-boot-project-setup-steps) uses **Spring Boot** for business logic and API endpoints.
 - **Elasticsearch** stores data and enables advanced search features.
 - **Keycloak** manages authentication using OAuth2 and OpenID Connect.
 
 ### Project In Brief
 
 - Platform enables restaurant discovery and reviews
-- Implements core features: search, auth, and image handling
+- Implements core features: search, [auth](#authentication-setup-overview), and image handling
 - Focuses on advanced search functionality
 - Includes geospatial capailities
 
@@ -271,12 +271,14 @@ Keycloak supports different protocols like SSO, OAuth2, OpenID Connect, LDAP, an
 
 ## Create all the required Entities
 
-1. Create the user entity
-2. Create the address address
-3. Create the operating hours entity
-4. Create the photo entity
-5. Create the review entity
-6. Create the restaurant entity
+1. Create the User entity
+2. Create the Address address
+3. Create the OperatingHours entity
+4. Create the Photo entity
+5. Create the Review entity
+6. Create the Restaurant entity
+
+> Used Lombok annotations to reduce boilerplate code.
 
 ### **Use of Elasticsearch annotations in Entities**
 
@@ -293,7 +295,18 @@ Keycloak supports different protocols like SSO, OAuth2, OpenID Connect, LDAP, an
 
 > Initialized the `photos` & `reviews` list for safe handling
 
+### Create Restaurant Repository
+
+- Created the `RestaurantRepository` interface extending `ElasticsearchRepository`
+- Added `@Repository` annotation for Spring configuration
+- Gained access to basic CRUD operations through **inheritance**.
+
 ---
+
+## Authentication Setup Overview
+
+1. Create users in Keycloak
+2. Configure OAuth2 resource server
 
 ### Author
 
