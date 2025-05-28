@@ -286,6 +286,10 @@ Keycloak supports different protocols like SSO, OAuth2, OpenID Connect, LDAP, an
 - Built the `OperatingHours` entity containing nested `TimeRange` objects.
 - Used `FieldType.Nested` to maintain relationships between fields.
 - Configured `LocalDateTime` with proper date format.
+- Added timestamp fields with proper `DateFormat` config for `Review` entity.
+- Used `FieldType.Integer` for the `rating` field.
+
+> Initialized the `photos` list for safe handling
 
 ---
 
