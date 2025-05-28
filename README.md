@@ -305,8 +305,24 @@ Keycloak supports different protocols like SSO, OAuth2, OpenID Connect, LDAP, an
 
 ## Authentication Setup Overview
 
-1. Create users in Keycloak
-2. Configure OAuth2 resource server
+1. [Create users in Keycloak](#creating-user-in-keycloak)
+2. [Configure OAuth2 resource server](#create-security-config)
+
+### Creating User in Keycloak
+
+- Access [Keycloak Admin Console](http://localhost:9090) → Select `restaurant-review` realm
+- `Users > Add user`
+- Add a test user with basic profile information
+- Set a development password manually (`Credentials > Set Password`)
+
+### Create Security Config
+
+- Created `SecurityConfig` class to manage application security settings
+- Configured application to require authentication for all endpoints
+- Set up **stateless session management** for our REST API
+- Enabled **JWT token validation** with Keycloak
+
+---
 
 ### Author
 
