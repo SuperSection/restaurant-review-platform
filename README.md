@@ -127,6 +127,35 @@ Entities we need:
 
 ---
 
+## Spring Boot Module Structure
+
+1. Create a new Spring Boot project
+2. Understanding the initial project structure
+3. Setting up Elasticsearch with Docker
+4. Installing and configuring Kibana
+5. Setting up Keycloak with Docker
+6. Configure Mapstruct with Lombok
+7. Running the frontend application
+
+---
+
+## Project Structure
+
+A new Spring Boot Project is created using [spring-initialzr](https://start.spring.io/)
+
+- Project follows standard **Spring Boot** directory structure
+- Selected *Java 21*, Maven and Jar packaging format
+- Spring Boot version: `3.5.0`
+- `pom.xml` contains our selected dependencies:
+  - Spring Web
+  - Spring Security
+  - OAuth2 Resource Server
+  - Spring Data Elasticsearch (Access+Driver)
+  - Validation
+  - Lombok
+- Main application class serves as the entry point
+- Resource files are stored in `src/main/resources`
+
 ### Author
 
 - [Soumo Sarkar](https://linkedin.com/in/soumo-sarkar)
